@@ -18,7 +18,7 @@ pub fn send_password_email(to_email: &str, password: &str,name: &str, role: &str
     .subject("Your Account Registration Successfull! ")
     .body(email_body)?;
 
-    let creds = Credentials::new("alexcheliyan1@gmail.com".to_string(), "qzczsqhhujnllhsh".to_string(),              
+    let creds = Credentials::new("alexcheliyan1@gmail.com".to_string(), "Enter your ".to_string(),              
     );
 
     let mailer = SmtpTransport::relay("smtp.gmail.com")?.credentials(creds).build();
@@ -27,4 +27,5 @@ pub fn send_password_email(to_email: &str, password: &str,name: &str, role: &str
     println!("Email sent successfully to {}", to_email);
 
     Ok(())
+
 }
